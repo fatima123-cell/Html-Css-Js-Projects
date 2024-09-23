@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('/img/mou.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Macondo', cursive;
+    font-style: normal;
+    overflow: hidden;
+}
+.testimonial-container {
+    display: flex;
+    width: 80vw;
+}
+
+.testimonial-panel {
+    position: relative;
+    background-image: linear-gradient(to bottom,#d9f6dd, #bdf3f0, #b8eaff, #d1dcff,#f2cbef);
+    height: 240px;
+    margin: 5px;
+    padding: 40px 20px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: flex 0.5s ease-in-out,background-color 0.3s ease;
+    cursor: pointer;
+    overflow: visible;
+    
+
+}
+.testimonial-panel:hover {
+    box-shadow: 0 6px 12px rgba(8,0,0,0.9);
+
+}
+.testimonial-content {
+    position: relative;
+    text-align: center;
+    color: black;
+}
+/**user image**/
+.user-image {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    border: 5px solid rgb(240, 168,168);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    top: -100px;
+    left: 50%;
+}
+.user-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+h3 {
+    margin-top: 10px;
+    font-style: normal;
+    font-size: 24px;
+    color: #3d0f0f;
+}
+p {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #3a0808;
+}
+/**add expand shrink effect**/
+
+.testimonial-panel.active {
+    flex: 3;
+}
+.testimonial-panel:not(.active){
+    flex: 0.5;
+}
+/**responsive design**/
+@media ( max-width: 768px){
+    .testimonial-container {
+        flex-wrap: wrap;
+    }
+
+    .testimonial-panel {
+        flex: 1 1 45%;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 576px){
+    .testimonial-panel {
+        flex: 1 1 90%;
+    }
+}
+
+@media (max-width: 480px){
+    .testimonial-container {
+        width: 100vw;
+    }
+
+    .testimonial-panel:nth-of-type(4),
+    .testimonial-panel:nth-of-type(5){
+        display: none;
+    }
+}
