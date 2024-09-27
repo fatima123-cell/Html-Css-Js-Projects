@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+:root{
+  --main-color:#FFAC1C;
+}
+*{
+  box-sizing: border-box;
+
+}
+body{
+  background-image: url('./img/bkg1.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff8d1;
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 100vh;
+  margin: 0;
+
+}
+.container{
+  background-color: rgba(0,0,0,0.5);
+  padding: 20px 40px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.container h1{
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.container a {
+  text-decoration: none;
+  color: var(--main-color);
+}
+.user-image{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid var(--main-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin: 0 auto;
+  display: block;
+}
+.user-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+  background: var(--main-color);
+  padding: 15px;
+  font-family: inherit;
+  font-style: 16px;
+  border: 0;
+  border-radius: 5px;
+}
+.btn:focus{
+  outline: 0;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+.text {
+  margin-top: 30px;
+}
+.form-control {
+  position: relative;
+  margin: 20px 0 40px;
+  width: 300px;
+}
+
+.form-control input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px #fff8d1 solid;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 18px;
+  color: #fff8d1;
+  position: relative;
+  z-index: 100;
+}
+
+.form-control input:focus,
+.form-control input:valid {
+  outline: 0;
+  border-bottom-color: var(--main-color);
+}
+.form-control label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  pointer-events: none;
+}
+.form-control label span {
+  display: inline-block;
+  font-size: 18px;
+  min-width: 5px;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+  color: var(--main-color);
+  transform: translateY(-30px);
+}
