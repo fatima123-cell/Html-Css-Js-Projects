@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=Roboto+Slab:wght@100..900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffefd5;
+  font-family: "Roboto Slab", serif;
+}
+.card_wrapper {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+
+}
+.card_container {
+  position: relative;
+  width: 340px;
+  height: 500px;
+  perspective: 1000px;
+}
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  text-align: center;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+  z-index: 1;
+  margin-top: 20px;
+}
+.card_container:hover .card{
+  transform: rotateY(180deg);
+}
+.donut_wrapper {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  transition: all 0.5s ease;
+  width: 340px;
+  height: 260px;
+  z-index: 2;
+  overflow: hidden;
+}
+.card_container:hover .donut_wrapper {
+  top: -60px;
+  transform: translateX(-50%) scale(1);
+}
+.donut_wrapper img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card_content {
+  padding: 210px 20px 20px;
+  backface-visibility: hidden;
+}
+.card_content h3 {
+  margin-bottom: 10px;
+}
+.button_container {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+.topping_button {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #f4a496, #edebb2);
+  color: rgba(20,16,16);
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+.button_icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+.card_content p {
+  margin-top: 15px;
+  color: #ffffff;
+  font-size: 1rem;
+}
+.card_content,
+.card_back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  color: #f8f9fa;
+}
+.first_card .card_content {
+  background-color: #f98f17f0;
+}
+.card_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+.card_back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+.card_back_content {
+  margin-top: 65px;
+}
+.first_card .card_back {
+  background: linear-gradient(135deg, #ff5f6d, #ff9a5b);
+}
+.second_card .card_content {
+  background-color: #2a0303;
+}
+.second_card .card_back {
+  background: linear-gradient(135deg, #22285d, #6eb4ff);
+}
+.ingredients_list {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+}
+.ingredients_list li {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  font-size: 1rem;
+}
+.ingredients_list i {
+  color: rgb(47, 255, 47);
+  margin-right: 5px;
+
+}
+.heart-icon {
+  font-size: 30px;
+  color: red;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.heart_icon_wrapper {
+  margin: 15px 0 ;
+}
+.heart-icon:hover {
+  transform: scale(1.3);
+  animation: blink 0.6s infinite;
+}
+.price_add {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fffeb6;
+}
+.add_to_cart {
+  background: linear-gradient(135deg, #ff4500, #dc143c);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, background-color 0.3s;
+
+}
+.add_to_cart:hover {
+  background: linear-gradient(135deg, #dc143c, #ff4500);
+  transform: translateY(-3px);
+}
+.add_to_cart:active {
+  transform: scale(0.95);
+}
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+}
