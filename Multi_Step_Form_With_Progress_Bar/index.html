@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Step Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress" id="progress"></div><!--progress bar line-->
+            <div class="circle active">1</div>
+            <div class="circle">2</div>
+            <div class="circle">3</div>
+            <div class="circle">4</div>
+        </div>
+
+        <!-- Multi-step Form -->
+        <form id="regForm"  >
+            <!-- Step 1 -->
+            <div class="step active">
+                <h3>Add Personal Details</h3>
+                <input type="text" placeholder="First Name" required />
+                <input type="text" placeholder="Last Name" required />
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step">
+                <h3>Add Login Details</h3>
+                <input type="email" placeholder="Email" required />
+                <input type="password" placeholder="Password" required />
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step">
+                <h3>Add Contact Information</h3>
+                <input type="text" placeholder="Address" required />
+                <input type="text" placeholder="Phone Number" required />
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step">
+                <h3>Place to live</h3>
+                <input type="text" placeholder="City" required />
+                <input type="text" placeholder="Country" required />
+            </div>
+
+            <!-- Navigation buttons -->
+            <div>
+                <button type="button" class="btn" id="prev" disabled>Prev</button>
+                <button type="button" class="btn" id="next">Next</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+
+    
+</body>
+</html>
